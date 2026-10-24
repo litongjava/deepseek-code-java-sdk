@@ -1,0 +1,11 @@
+[linux.env]
+export JAVA_HOME=/usr/java/jdk-21.0.6
+
+[linux.build]
+mvn clean package -DskipTests -Dgpg.skip
+
+[win.build]
+mvn clean package -DskipTests -Dgpg.skip
+
+[run]
+java -jar target/tio-boot-agent-demo.jar --agent.cli.path=/path/to/agent-cli
