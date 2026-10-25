@@ -43,7 +43,7 @@ public class AgentMessageMapper {
       run.setErrorMessage(result.getError());
       run.setNumTurns(result.getNumTurns());
       run.setTotalCostUsd(result.getTotalCostUsd());
-      run.setDurationMs(result.getDurationMs());
+      run.setDurationMs((int) Math.min(Integer.MAX_VALUE, result.getDurationMs()));
       run.setStructuredOutput(result.getStructuredOutput());
     }
   }

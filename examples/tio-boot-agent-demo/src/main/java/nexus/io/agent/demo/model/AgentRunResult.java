@@ -14,7 +14,8 @@ public class AgentRunResult {
   private String errorMessage;
   private int numTurns;
   private Double totalCostUsd;
-  private long durationMs;
+  /** Kept as int: tio-boot writes every long as a JSON string. */
+  private int durationMs;
   private Object structuredOutput;
   /** Tool calls in order: name, input and, once known, isError. */
   private List<Kv> toolCalls = new ArrayList<Kv>();
@@ -75,11 +76,11 @@ public class AgentRunResult {
     this.totalCostUsd = totalCostUsd;
   }
 
-  public long getDurationMs() {
+  public int getDurationMs() {
     return durationMs;
   }
 
-  public void setDurationMs(long durationMs) {
+  public void setDurationMs(int durationMs) {
     this.durationMs = durationMs;
   }
 
